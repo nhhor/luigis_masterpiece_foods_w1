@@ -21,7 +21,7 @@
   <% @product.reviews.each do |review| %>
   <ul>
     <li>
-      <%= link_to review.name, product_review_path(@product, review) %>
+      On <%= review.updated_at %> <%= review.author %> rated this product a <%= review.rating %>, their full review can be found: <%= link_to "here", product_review_path(@product, review) %>.
     </li>
   </ul>
   <% end %>
