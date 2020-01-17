@@ -17,4 +17,11 @@ class Product < ApplicationRecord
 
     scope :made_in_the_usa, -> { where(country_of_origin: "USA") }
 
-end
+    before_save(:titleize_product)
+
+    private
+    def titleize_product
+      self.name = self.name.titleize
+    end
+
+  end
