@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_01_17_174047) do
     t.string "name"
     t.decimal "cost"
     t.string "country_of_origin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_01_17_174047) do
     t.string "content_body"
     t.integer "rating"
     t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "reviews", "products"
