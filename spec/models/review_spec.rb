@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe Product do
-  # it { should have_many(:employees) }
-  it { should have_many(:reviews) }
+describe Review do
+  it { should belong_to(:product) }
 end
 
 # describe Division do
