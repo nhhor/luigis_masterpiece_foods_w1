@@ -13,9 +13,9 @@ end
 
 
 
-# describe Division do
-#   it("titleizes the name of an employee") do
-#     division = Division.create({division_name: "giant steps"})
-#     expect(division.division_name()).to(eq("Giant Steps"))
-#   end
-# end
+describe Product do
+  it("titleizes the name of a product") do
+    product = Product.create({name: "taco salad"})
+    expect(product.name()).to(eq("Taco Salad"))
+  end
+end
