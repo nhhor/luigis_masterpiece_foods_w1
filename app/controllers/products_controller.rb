@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @made_in_the_usa = Product.made_in_the_usa
+
     render :index
   end
 

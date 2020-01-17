@@ -15,4 +15,6 @@ class Product < ApplicationRecord
 
     scope :most_recent_products, -> { order(created_at: :desc).limit(3)}
 
+    scope :made_in_the_usa, -> { where(country_of_origin: "USA") }
+
 end

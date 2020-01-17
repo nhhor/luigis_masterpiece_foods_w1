@@ -1,14 +1,31 @@
 <h2>Products</h2>
 
 <% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @products.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
 <% else %>
-  <p>There are no products yet.</p>
+<p>There are no products yet.</p>
 <% end %>
 
 
 <p><%= link_to "Create new product", new_product_path %></p>
+
+
+<hr>
+
+<% if @made_in_the_usa.any? %>
+<h4>We're proud to highlight the following products ouf ours made in the USA:</h4>
+
+<ul>
+  <% @made_in_the_usa.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>Unfortunately, none of our products are made in the USA. Oops.</p>
+<% end %>
+
+<hr>
