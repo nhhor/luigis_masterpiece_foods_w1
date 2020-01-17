@@ -13,5 +13,6 @@ class Product < ApplicationRecord
     .limit(1)
     )}
 
+    scope :most_recent_products, -> { order(created_at: :desc).limit(3)}
 
 end

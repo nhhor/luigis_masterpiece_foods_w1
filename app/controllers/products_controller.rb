@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def welcome
     @products = Product.all
     @most_reviews = Product.most_reviews
+    @most_recent_products = Product.most_recent_products
 
     # binding.pry
     render :welcome

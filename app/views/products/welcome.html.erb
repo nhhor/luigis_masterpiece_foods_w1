@@ -15,14 +15,30 @@
 <h4>Our product with the most reviews:</h4>
 
 <ul>
-<% @most_reviews.each do |product| %>
+  <% @most_reviews.each do |product| %>
   <li>
     <%= link_to product.name, product_path(product.id) %>
   </li>
-<% end %>
+  <% end %>
 </ul>
 <% else %>
 <p>There is currently no product with the most reviews.</p>
+<% end %>
+
+<hr>
+
+<% if @most_recent_products.any? %>
+<h4>Our 3 most recent products:</h4>
+
+<ul>
+  <% @most_recent_products.each do |product| %>
+  <li>
+    <%= link_to product.name, product_path(product.id) %> | added on <%= product.created_at %>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<p>There is currently no recent products.</p>
 <% end %>
 
 <hr>
