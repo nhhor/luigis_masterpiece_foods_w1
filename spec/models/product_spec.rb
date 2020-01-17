@@ -4,6 +4,7 @@ describe Product do
   it { should have_many(:reviews) }
 end
 
+# TEST FOR: All fields should be filled out, including rating.
 describe Product do
   it { should validate_presence_of :name }
   it { should validate_presence_of :cost }
