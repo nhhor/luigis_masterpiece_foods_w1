@@ -15,8 +15,10 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
+      flash[:notice] = "Review successfully created!"
       redirect_to product_path(@product)
     else
+      flash[:alert] = "There was a problem creating this review!"
       render :new
     end
   end
@@ -34,15 +36,20 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
+      flash[:notice] = "Review successfully updated!"
       redirect_to product_path(@review.product)
     else
+      flash[:alert] = "There was a problem updating this review!"
       render :edit
     end
   end
 
   def destroy
+    flash[:notice] = "Review successfully removed!"
+
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to product_path(@review.product)
