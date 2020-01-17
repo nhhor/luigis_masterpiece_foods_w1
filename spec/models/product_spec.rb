@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 describe Product do
-  # it { should have_many(:employees) }
   it { should have_many(:reviews) }
 end
+
+describe Product do
+  it { should validate_presence_of :name }
+end
+
+
 
 # describe Division do
 #   it("titleizes the name of an employee") do
