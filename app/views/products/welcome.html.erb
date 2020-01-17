@@ -5,6 +5,24 @@
 <p>To do:</p>
 <ul>
   <li>page should also include the three most recently added products </li>
-  <li>and the product with the most reviews
-</li>
 </ul>
+
+
+
+<hr>
+
+<% if @most_reviews.any? %>
+<h4>Our product with the most reviews:</h4>
+
+<ul>
+<% @most_reviews.each do |product| %>
+  <li>
+    <%= link_to product.name, product_path(product.id) %>
+  </li>
+<% end %>
+</ul>
+<% else %>
+<p>There is currently no product with the most reviews.</p>
+<% end %>
+
+<hr>

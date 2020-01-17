@@ -1,5 +1,13 @@
 class ProductsController < ApplicationController
 
+  def welcome
+    @products = Product.all
+    @most_reviews = Product.most_reviews
+
+    # binding.pry
+    render :welcome
+  end
+
   def index
     @products = Product.all
     render :index
