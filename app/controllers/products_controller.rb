@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:alert] = 'The record you tried to access no longer exists.'
+    render :sorry   # or e.g. redirect_to :action => :index
+  end
+
   def welcome
     @products = Product.all
     @most_reviews = Product.most_reviews

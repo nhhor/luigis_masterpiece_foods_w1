@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
-  # def index
-  #   @products = Product.all
-  #   render :index
-  # end
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:alert] = 'The record you tried to access no longer exists.'
+    render :sorry   # or e.g. redirect_to :action => :index
+  end
 
   def new
     @product = Product.find(params[:product_id])
@@ -56,8 +56,8 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def review_params
-      params.require(:review).permit(:author, :content_body, :rating)
-    end
+  def review_params
+    params.require(:review).permit(:author, :content_body, :rating)
+  end
 
 end
