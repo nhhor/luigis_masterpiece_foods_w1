@@ -21,7 +21,7 @@
   <% @product.reviews.each do |review| %>
   <ul>
     <li>
-      On <%= review.updated_at.year %>-<%= review.updated_at.month %>-<%= review.updated_at.day %> @ <%= (review.updated_at.time.hour - 8) %>:<%= (review.updated_at.strftime("%M:%S")) %>, <%= review.author %> rated this product a <em><%= review.rating %></em>, see their review <%= link_to "here", product_review_path(@product, review) %>.
+      On <%= review.updated_at.year %>-<%= review.updated_at.month %>-<%= review.updated_at.day %> @ <%= (review.updated_at.time.hour) %>:<%= (review.updated_at.strftime("%M:%S")) %>, <%= review.author %> rated this product a <em><%= review.rating %></em>, see their review <%= link_to "here", product_review_path(@product, review) %>.
     </li>
   </ul>
   <% end %>

@@ -11,7 +11,7 @@
     <ul>
       <% @most_recent_products.each do |product| %>
       <li>
-        <%= link_to product.name, product_path(product.id) %> | added on <%= product.created_at.year %>-<%= product.created_at.month %>-<%= product.created_at.day %> @ <%= (product.created_at.time.hour - 8) %>:<%= (product.created_at.strftime("%M:%S")) %>
+        <%= link_to product.name, product_path(product.id) %> | added on <%= product.created_at.year %>-<%= product.created_at.month %>-<%= product.created_at.day %> @ <%= (product.created_at.time.hour) %>:<%= (product.created_at.strftime("%M:%S")) %>
       </li>
       <% end %>
     </ul>
