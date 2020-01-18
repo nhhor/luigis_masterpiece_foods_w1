@@ -10,9 +10,10 @@
 </head>
 
 <body>
+  <%= image_tag("lmf.png", class: "LMFBanner", alt: "LMF Logo") %>
   <div class="container">
 
-    <h1>Luigi's Masterpiece Foods</h1>
+    <!-- <h1>Luigi's Masterpiece Foods</h1> -->
 
     <% content_for(:navbar) do %>
     <h3 class="navbar"><a href="/">Home</a> |
@@ -23,10 +24,16 @@
 
     <hr>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+    <div class="noticeFloat">
+      <%= flash[:notice] %>
+    </div>
+
+    <div class="alertFloat">
+      <%= flash[:alert] %>
+    </div>
 
     <%= yield %>
+
   </div>
 </body>
 </html>
