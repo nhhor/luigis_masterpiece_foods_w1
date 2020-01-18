@@ -7,16 +7,15 @@ describe "the add a product process" do
     fill_in 'Name', :with => 'Pickles'
     fill_in 'Cost', :with => '0.89'
     fill_in 'Country of origin', :with => 'USA'
-
     click_on 'Create Product'
     expect(page).to have_content 'Product successfully created!'
     expect(page).to have_content 'Pickles'
   end
 
-  # it "gives an error when no name is entered" do
-  #   visit new_album_path
-  #   click_on 'Create Album'
-  #   expect(page).to have_content "Name can't be blank"
-  # end
+  it "gives an error when no name is entered" do
+    visit new_product_path
+    click_on 'Create Product'
+    expect(page).to have_content "Name can't be blank"
+  end
 
 end
