@@ -9,13 +9,18 @@ h1 {
 }
 
 /* primary */
-h2 {
+h3 {
   color: rgba(141, 182, 181, 1);
 }
 
 /* shade */
 p {
   color: rgba(91, 132, 131, 1);
+}
+
+em {
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 .container {

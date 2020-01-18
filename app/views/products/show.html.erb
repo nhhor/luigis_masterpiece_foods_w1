@@ -1,6 +1,6 @@
-<h2>Product name: <%= @product.name %></h2>
-<h3>Product cost: <%= @product.cost %></h3>
-<h3>Product country of origin: <%= @product.country_of_origin %></h3>
+<h3>Product name: <%= @product.name %></h3>
+<h4>Product cost: $<%= @product.cost %></h4>
+<h4>Product country of origin: <%= @product.country_of_origin %></h4>
 
 <hr>
 
@@ -21,7 +21,7 @@
   <% @product.reviews.each do |review| %>
   <ul>
     <li>
-      On <%= review.updated_at %> <%= review.author %> rated this product a <%= review.rating %>, their full review can be found: <%= link_to "here", product_review_path(@product, review) %>.
+      On <%= review.updated_at.year %>-<%= review.updated_at.month %>-<%= review.updated_at.day %> @ <%= (review.updated_at.time.hour - 8) %>:<%= (review.updated_at.strftime("%M:%S")) %>, <%= review.author %> rated this product a <em><%= review.rating %></em>, see their review <%= link_to "here", product_review_path(@product, review) %>.
     </li>
   </ul>
   <% end %>
