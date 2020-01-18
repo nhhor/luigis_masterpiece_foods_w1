@@ -1,6 +1,6 @@
 body {
   background: rgb(128,128,128);
-  background: linear-gradient(270deg, rgba(128,128,128,0) 85%, rgba(191,232,231,1) 100%);
+  background: linear-gradient(270deg, rgba(128,128,128,0) 90%, rgba(114, 73, 74, 1) 100%);
 }
 
 /* tint */
@@ -18,10 +18,14 @@ p {
   color: rgba(91, 132, 131, 1);
 }
 
+.container {
+  margin-left: 10%;
+}
+
 .LMFBanner {
   width: 60%;
-  padding-left: 10%;
-  padding-top: 10px;
+  margin-left: 10%;
+  margin-top: 10px;
 }
 
 .navbar {
